@@ -2,9 +2,9 @@
 #Resizer-class  
 ###Easily listen on resize on a per-element basis!  
 ##Methods:  
-* <Resizer>.addSizeListener()  
+###<Resizer>.addSizeListener()  
     @param <Object> args  
-     {
+     {  
       <Array, int> sizes      : The sizes to listen for,  
       <Function> inside       : Callback on match,  
       [<Function> outside]    : Callback on mismatch,  
@@ -13,7 +13,7 @@
     [@param <jQuery-object> $context] : Element-context function is called from.  
 -------------------------------------  
 
-* <jQuery>.addSizeListener()
+###<jQuery>.addSizeListener()  
     Same as above, with the $context provided as "$(this)".
 -------------------------------------  
 
