@@ -31,8 +31,7 @@
 
     Resizer.listeners = [];
 
-    // Main attacher
-    /* Arguments: sizes | callback | listenerType | $context */
+    // Main attach-method
     Resizer.addSizeListener = function(args, $context) {
         if (typeof args.inside !== "function" && !(args.sizes instanceof Array || typeof args.sizes === "number")) {
             console.log("No listener added: Bad parameters");
@@ -44,7 +43,8 @@
         listener.sizeSpan = {};
 
         if (typeof args.sizes === "number") {
-        // Adds size span max to maximum possible integer when only a min value is specified
+        // Adds size span max to maximum possible integer when only a min value is specified, 
+        // because who knows what magic the future will bring?
             listener.type = type;
             listener.sizeSpan.min = args.sizes;
             listener.sizeSpan.max = 9007199254740992;
@@ -62,7 +62,7 @@
         Resizer.listeners.push(listener);
     }
 
-    // jQuery event attacher
+    // jQuery attach-method
     $.fn.addSizeListener = function(args) {
         function init() {
             Resizer.addSizeListener(args, this);
@@ -80,7 +80,8 @@
         var height = $(window).height(), width = $(window).width();
 
         $.each(Resizer.listeners, function(index, listener) {
-            // Listen to width and height seperately
+            // Not entirely sure what listening separately to width/height brings to the table,
+            // candidate for removal?
             if (listener.type === "width") {
                 if (listener.sizeSpan.min <= width && listener.sizeSpan.max >= width) {
                     // using function.call() if the listener has provided a context to call to (in case of jQuery binding)
