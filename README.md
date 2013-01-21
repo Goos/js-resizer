@@ -16,6 +16,15 @@
     Same as above, with the $context provided as "$(this)".
 -------------------------------------  
 
+###Resizer.scanClasses(element)
+    Scans the provided element after DOM-nodes with the
+    data-[media]class attributes, with [media] being either
+    mobile | tablet | desktop.
+
+    e.g: 
+    <div class = "box" data-mobileclass="mobile-box" data-tabletclass="tablet-box">
+    
+
 ##Example usage: 
     $('.my-object').addSizeListener({  
       sizes       : [0, 768],  
