@@ -148,7 +148,7 @@
  * and adds the classes specified by the media, when within its
  * bounds
  * 
- * @param  {jQuery} container The jQuery-element to search within
+ * @param  {DOMElement} container The jQuery-element to search within
  */
     Resizer.scanClasses = function (container) {
         $('[data-mobileclass]', container).each(function () {
